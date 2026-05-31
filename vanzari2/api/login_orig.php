@@ -22,7 +22,7 @@ $db = Database::getConnection();
 
 $stmt = $db->prepare(
     "SELECT *
-     FROM users
+     FROM users2
      WHERE username=?
      AND active=1"
 );
@@ -34,7 +34,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 $user = $stmt
     ->get_result()
@@ -69,7 +69,7 @@ if (
 
 $stmt = $db->prepare(
     "
-    UPDATE users
+    UPDATE users2
     SET last_login = NOW()
     WHERE id = ?
     "
@@ -82,7 +82,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 /*
 |--------------------------------------------------------------------------

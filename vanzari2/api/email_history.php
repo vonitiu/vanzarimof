@@ -41,7 +41,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 Response::json([
     'success'=>true,

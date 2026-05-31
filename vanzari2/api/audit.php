@@ -104,7 +104,7 @@ if(count($params))
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 Response::json([
     'success'=>true,

@@ -143,7 +143,7 @@ class Mailer
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         return
             $stmt
@@ -183,7 +183,7 @@ class Mailer
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
     }
 
     private function logEmail(
@@ -227,6 +227,6 @@ class Mailer
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
     }
 }

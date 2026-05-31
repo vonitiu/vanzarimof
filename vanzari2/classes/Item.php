@@ -27,7 +27,7 @@ class Item
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         return $stmt
             ->get_result()
@@ -53,7 +53,7 @@ class Item
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         $item = $stmt
             ->get_result()
@@ -162,7 +162,7 @@ class Item
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         return $this->db->insert_id;
     }
@@ -222,9 +222,7 @@ class Item
             $id
         );
 
-        return if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        return $stmt->execute();
     }
 
     public function delete(
@@ -242,9 +240,7 @@ class Item
             $id
         );
 
-        return if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        return $stmt->execute();
     }
 
     public function updateOfferTotal(
@@ -274,7 +270,7 @@ class Item
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         $row =
             $stmt
@@ -305,6 +301,6 @@ class Item
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
     }
 }

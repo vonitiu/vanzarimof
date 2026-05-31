@@ -39,6 +39,6 @@ class Audit
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
     }
 }

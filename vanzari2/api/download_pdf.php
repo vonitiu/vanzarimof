@@ -28,7 +28,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 $row =
     $stmt

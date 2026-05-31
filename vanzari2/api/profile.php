@@ -28,7 +28,7 @@ switch($_SERVER['REQUEST_METHOD'])
                 full_name,
                 email,
                 role
-            FROM users
+            FROM users2
             WHERE id=?
             "
         );
@@ -40,7 +40,7 @@ switch($_SERVER['REQUEST_METHOD'])
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true,
@@ -65,7 +65,7 @@ switch($_SERVER['REQUEST_METHOD'])
         $stmt =
             $db->prepare(
             "
-            UPDATE users
+            UPDATE users2
             SET
                 full_name=?,
                 email=?
@@ -82,7 +82,7 @@ switch($_SERVER['REQUEST_METHOD'])
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true

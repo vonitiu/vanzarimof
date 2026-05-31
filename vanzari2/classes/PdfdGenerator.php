@@ -117,7 +117,7 @@ class PdfGenerator
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         return [
             'pdf' => $pdfDb,
@@ -145,7 +145,7 @@ class PdfGenerator
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         $offer =
             $stmt
@@ -174,7 +174,7 @@ class PdfGenerator
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         $items =
             $stmt

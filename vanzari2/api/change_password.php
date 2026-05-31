@@ -31,7 +31,7 @@ $stmt =
     $db->prepare(
     "
     SELECT password_hash
-    FROM users
+    FROM users2
     WHERE id=?
     "
 );
@@ -43,7 +43,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 $current =
     $stmt
@@ -73,7 +73,7 @@ $newHash =
 $stmt =
     $db->prepare(
     "
-    UPDATE users
+    UPDATE users2
     SET password_hash=?
     WHERE id=?
     "
@@ -87,7 +87,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 Response::json([
     'success'=>true

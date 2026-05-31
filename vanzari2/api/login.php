@@ -47,7 +47,7 @@ try
         $db->prepare(
         "
         SELECT *
-        FROM users
+        FROM users2
         WHERE username=?
         LIMIT 1
         "
@@ -145,7 +145,7 @@ try
             $stmt =
                 $db->prepare(
                 "
-                UPDATE users
+                UPDATE users2
                 SET failed_login_count =
                     failed_login_count + 1
                 WHERE id=?
@@ -168,7 +168,7 @@ try
                 $stmt =
                     $db->prepare(
                     "
-                    UPDATE users
+                    UPDATE users2
                     SET
                         locked_until =
                             DATE_ADD(
@@ -210,7 +210,7 @@ try
         $stmt =
             $db->prepare(
             "
-            UPDATE users
+            UPDATE users2
             SET
                 failed_login_count = 0,
                 locked_until = NULL,
@@ -231,7 +231,7 @@ try
         $stmt =
             $db->prepare(
             "
-            UPDATE users
+            UPDATE users2
             SET
                 last_login = NOW()
             WHERE id=?

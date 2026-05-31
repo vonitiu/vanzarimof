@@ -60,7 +60,7 @@ function loadOffer()
     .done(function(response){
 
         let offer =
-            response.data.offer;
+            response.data;
 
         $('#offerId').val(
             offer.id

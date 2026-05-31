@@ -27,7 +27,7 @@ class Settings
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         $result =
             $stmt->get_result();
@@ -69,9 +69,7 @@ class Settings
             $value
         );
 
-        return if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        return $stmt->execute();
     }
 
     public static function getAll(): array

@@ -31,9 +31,7 @@ class Auth
             $expires
         );
 
-        if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        $stmt->execute();
 
         return $token;
     }
@@ -61,7 +59,7 @@ class Auth
             "SELECT
                 u.*
             FROM auth_tokens t
-            JOIN users u
+            JOIN users2 u
                 ON u.id=t.user_id
             WHERE
                 t.token=?
@@ -70,9 +68,7 @@ class Auth
 
         $stmt->bind_param("s", $token);
 
-        if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        $stmt->execute();
 
         $result = $stmt->get_result();
 

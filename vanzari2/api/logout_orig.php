@@ -25,7 +25,7 @@ $stmt->bind_param(
 
 if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
 echo json_encode([
     "success"=>true

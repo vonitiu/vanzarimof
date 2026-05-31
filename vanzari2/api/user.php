@@ -46,7 +46,7 @@ switch(
                 role,
                 active
 
-            FROM users
+            FROM users2
 
             WHERE id=?
             "
@@ -59,7 +59,7 @@ switch(
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true,
@@ -90,7 +90,7 @@ switch(
         $stmt =
             $db->prepare(
             "
-            INSERT INTO users
+            INSERT INTO users2
             (
                 username,
                 password_hash,
@@ -119,7 +119,7 @@ switch(
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true,
@@ -147,7 +147,7 @@ switch(
         $stmt =
             $db->prepare(
             "
-            UPDATE users
+            UPDATE users2
             SET
                 full_name=?,
                 email=?,
@@ -169,7 +169,7 @@ switch(
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true
@@ -188,7 +188,7 @@ switch(
         $stmt =
             $db->prepare(
             "
-            UPDATE users
+            UPDATE users2
             SET active=0
             WHERE id=?
             "
@@ -201,7 +201,7 @@ switch(
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         Response::json([
             'success'=>true

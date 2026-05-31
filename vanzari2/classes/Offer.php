@@ -33,6 +33,7 @@ class Offer
             LEFT JOIN elementeoferte e
                 ON e.oferta = o.id
             WHERE o.deleted=0 and 1=1
+            
         ";
 
         $types = '';
@@ -96,8 +97,8 @@ class Offer
         }
 
         if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+            throw new Exception($stmt->error);
+        }
 
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
@@ -113,8 +114,8 @@ class Offer
         $stmt->bind_param('i',$id);
 
         if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+            throw new Exception($stmt->error);
+        }
 
         return $stmt
             ->get_result()
@@ -175,7 +176,7 @@ class Offer
 
         if(!$stmt->execute()){
     throw new Exception($stmt->error);
-};
+}
 
         return $this->db->insert_id;
     }
@@ -216,9 +217,11 @@ class Offer
             $id
         );
 
-        return if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        if(!$stmt->execute()){
+            throw new Exception($stmt->error);
+        }
+
+        return true;
     }
 
     public function delete(int $id): bool
@@ -231,8 +234,8 @@ class Offer
         $stmt->bind_param('i', $id);
 
         if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+            throw new Exception($stmt->error);
+        }
 
         $stmt = $this->db->prepare(
             "UPDATE oferte
@@ -242,9 +245,7 @@ class Offer
 
         $stmt->bind_param('i', $id);
 
-        return if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+        return $stmt->execute();
     }
 
     public function duplicate(
@@ -323,8 +324,8 @@ class Offer
             );
 
             if(!$stmt->execute()){
-    throw new Exception($stmt->error);
-};
+            throw new Exception($stmt->error);
+        }
         }
 
         return $newOfferId;
