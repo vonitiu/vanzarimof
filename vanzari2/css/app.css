@@ -1,0 +1,37 @@
+body
+{
+    font-family: Arial;
+    background:#f4f4f4;
+}
+
+.login-card
+{
+    width:350px;
+    margin:100px auto;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+
+input
+{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+button
+{
+    width:100%;
+    padding:12px;
+}
+
+.admin-menu{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.admin-menu a{
+    text-decoration:none;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Item</title>
+
+<link rel="stylesheet"
+href="css/app.css">
+
+<link
+    rel="manifest"
+    href="manifest.json">
+
+<meta
+    name="theme-color"
+    content="#1f4e79">
+<style>
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.row input,
+.row textarea{
+    flex:1;
+}
+
+textarea{
+    min-height:120px;
+}
+
+.calculated{
+    background:#f4f4f4;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+Item
+</h1>
+
+<div class="card">
+
+<input
+type="hidden"
+id="itemId">
+
+<div class="row">
+
+<input id="cod"
+placeholder="Code">
+
+<input id="catalog_no"
+placeholder="Catalog No">
+
+<input id="material_no"
+placeholder="Material No">
+
+</div>
+
+<div class="row">
+
+<textarea
+id="descriere"
+placeholder="Description">
+</textarea>
+
+</div>
+
+<div class="row">
+
+<input
+id="buc"
+type="number"
+step="0.01"
+placeholder="Qty">
+
+<input
+id="pret"
+type="number"
+step="0.01"
+placeholder="Price">
+
+<input
+id="discount"
+type="number"
+step="0.01"
+placeholder="Discount">
+
+</div>
+
+<div class="row">
+
+<input
+id="livrare"
+placeholder="Delivery">
+
+<input
+id="packing_q"
+placeholder="Packing">
+
+<input
+id="cod_client"
+placeholder="Client Code">
+
+</div>
+
+<div class="row">
+
+<input
+id="valoare"
+readonly
+class="calculated">
+
+<input
+id="total"
+readonly
+class="calculated">
+
+</div>
+
+<div class="row">
+
+<input
+id="obs1"
+placeholder="Obs1">
+
+<input
+id="obs2"
+placeholder="Obs2">
+
+</div>
+
+<div>
+
+<button id="btnSave">
+Save
+</button>
+
+<button id="btnCancel">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/item-edit.js"></script>
+
+</body>
+</html>
