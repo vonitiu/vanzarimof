@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="utf-8">
-
-<title>
-System Status
-</title>
-
-<link rel="stylesheet"
-href="css/app.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Status</title>
+<link rel="stylesheet" href="css/app.css">
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>
-System Status
-</h1>
-
-<table>
-
-<tbody id="statusTable">
-
-</tbody>
-
-</table>
-
+<div class="page-shell">
+  <div class="container">
+<div id="menuContainer"></div>
+    <div class="header"><h1>System Status</h1></div>
+    <div class="section table-container">
+      <table>
+        <tbody id="statusTable"></tbody>
+      </table>
+    </div>
+  </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
 <script src="js/config.js"></script>
 <script src="js/api.js"></script>
 <script src="js/status.js"></script>
-
 </body>
 </html>

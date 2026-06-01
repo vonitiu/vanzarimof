@@ -55,3 +55,63 @@ function api(
                 : null
     });
 }
+
+
+$(document).ready(function(){
+
+    const currentPage =
+        window.location.pathname
+            .split('/')
+            .pop()
+            .toLowerCase();
+
+    if(
+        currentPage != 'login.html'
+    )
+    {
+        $('#menuContainer').load(
+            'partials/admin-menu.html'
+        );
+    }   
+
+});
+
+$(document).ready(function(){
+
+    const user =
+        getCurrentUser();
+
+    if(!user)
+    {
+        return;
+    }
+
+    if(
+        user.role !== 'admin'
+    )
+    {
+        $('.admin-only').hide();
+    }
+
+    if(
+        ![
+            'admin',
+            'manager'
+        ].includes(
+            user.role
+        )
+    )
+    {
+        $('.manager-only').hide();
+    }
+
+});
+
+$('#menuToggle').click(function(){
+
+    $('.sidebar')
+        .toggleClass(
+            'open'
+        );
+
+});

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="menuContainer"></div>
+<div class="page-shell">
+  <div class="container">
+    <div class="section">
+      <h1>System Settings</h1>
+      <div class="form-group"><label for="smtp_host">SMTP Host</label><input id="smtp_host"></div>
+      <div class="form-group"><label for="smtp_port">SMTP Port</label><input id="smtp_port"></div>
+      <div class="form-group"><label for="smtp_user">SMTP User</label><input id="smtp_user"></div>
+      <div class="form-group"><label for="smtp_password">SMTP Password</label><input id="smtp_password" type="password"></div>
+      <div class="form-group"><label for="default_email_recipient">Default Recipient</label><input id="default_email_recipient"></div>
+      <div class="form-group"><label for="smtp_from">From Email</label><input id="smtp_from"></div>
+      <div class="form-group"><label for="smtp_from_name">From Name</label><input id="smtp_from_name"></div>
+      <div class="form-group"><label for="pdf_company_name">PDF Company Name</label><input id="pdf_company_name"></div>
+      <div class="form-group"><label for="pdf_footer">PDF Footer</label><textarea id="pdf_footer"></textarea></div>
+      <div class="button-row"><button class="btn" id="btnSave">Save Settings</button></div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

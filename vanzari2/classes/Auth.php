@@ -79,4 +79,32 @@ class Auth
 
         return $result->fetch_assoc();
     }
+
+    public static function requireRole(array $roles)
+    {
+        $user = self::validate();
+
+        if(!$user)
+        {
+            Response::json([
+                'success'=>false,
+                'message'=>'Unauthorized'
+            ],401);
+        }
+
+        if(
+            !in_array(
+                $user['role'],
+                $roles
+            )
+        )
+        {
+            Response::json([
+                'success'=>false,
+                'message'=>'Forbidden'
+            ],403);
+        }
+
+        return $user;
+    }
 }

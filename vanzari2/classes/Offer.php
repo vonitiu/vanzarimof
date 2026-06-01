@@ -84,6 +84,14 @@ class Offer
             $params[] = $dateTo;
         }
 
+        if ($user['role'] === 'sales')
+        {
+            $sql .= " AND o.responsabil = ? ";
+
+            $types .= 's';
+            $params[] = $user['username'];
+        }
+
         $sql .= "
             GROUP BY o.id
             ORDER BY o.id DESC

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4e79">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="menuContainer"></div>
+<div class="page-shell">
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Dashboard</h1>
+      </div>
+      <div class="button-row">
+        <button class="btn" id="btnOffers">Offers</button>
+        <button class="btn" id="btnExport">Export Excel</button>
+        <button class="btn" id="btnLogout">Logout</button>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h2 id="totalOffers">0</h2>
+        <p>Total Offers</p>
+      </div>
+      <div class="card">
+        <h2 id="draftOffers">0</h2>
+        <p>Draft</p>
+      </div>
+      <div class="card">
+        <h2 id="submittedOffers">0</h2>
+        <p>Submitted</p>
+      </div>
+      <div class="card">
+        <h2 id="sentOffers">0</h2>
+        <p>Sent</p>
+      </div>
+      <div class="card">
+        <h2 id="totalValue">0.00</h2>
+        <p>Total Value</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Monthly Performance</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>Month</th><th>Offers</th><th>Total Value</th></tr>
+          </thead>
+          <tbody id="monthlyTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Top Customers</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Customer</th><th>Offers</th><th>Total Value</th></tr></thead>
+          <tbody id="topCustomers"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Top Sales Agents</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Agent</th><th>Offers</th><th>Total Value</th></tr></thead>
+          <tbody id="topAgents"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Offers By Department</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Department</th><th>Offers</th><th>Total Value</th></tr></thead>
+          <tbody id="departments"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Offers Awaiting Email</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Offer</th><th>Customer</th><th>Total</th></tr></thead>
+          <tbody id="awaitingEmail"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Emails Sent This Week</h2>
+      <h1 id="sentThisWeek">0</h1>
+    </div>
+    <div class="section">
+      <h2>Recent Activity</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Date</th><th>User</th><th>Action</th><th>Details</th></tr></thead>
+          <tbody id="recentActivity"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Quick Actions</h2>
+      <div class="button-row">
+        <button class="btn" onclick="location.href='offer-edit.html'">New Offer</button>
+        <button class="btn" onclick="location.href='offers.html'">View Offers</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -17,6 +17,12 @@ $('#btnLogin').click(function(){
             r.token
         );
 
+        localStorage.setItem(
+            'user',
+            JSON.stringify(
+                r.user
+            )
+        );
         location.href =
             'offers.html';
     })

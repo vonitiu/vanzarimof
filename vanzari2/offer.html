@@ -1,266 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="utf-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Offer Details</title>
-
-<link rel="stylesheet"
-href="css/app.css">
-
-<style>
-
-.container{
-    max-width:1400px;
-    margin:auto;
-}
-
-.card{
-    background:#fff;
-    padding:20px;
-    border-radius:8px;
-    margin-bottom:15px;
-}
-
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.summary{
-    display:flex;
-    gap:20px;
-}
-
-.summary-box{
-    flex:1;
-    text-align:center;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:6px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,
-td{
-    padding:8px;
-    border-bottom:1px solid #ddd;
-}
-
-.actions button{
-    margin-right:5px;
-}
-
-</style>
-
-<link
-    rel="manifest"
-    href="manifest.json">
-
-<meta
-    name="theme-color"
-    content="#1f4e79">
-    
+<link rel="stylesheet" href="css/app.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4e79">
 </head>
-
 <body>
-
-<div class="container">
-
+<div class="page-shell">
+  <div class="container">
+<div id="menuContainer"></div>
     <div class="header">
-
-        <h1>
-            Offer Details
-        </h1>
-
-        <div>
-
-            <button id="btnBack">
-                Back
-            </button>
-
-            <button id="btnEditOffer">
-                Edit Offer
-            </button>
-
-            <button id="btnAddItem">
-                Add Item
-            </button>
-
-            <button id="btnGeneratePdf">
-                Generate PDF
-            </button>
-
-            <button id="btnPreviewPdf">
-                Preview PDF
-            </button>
-
-            <button id="btnSendEmail">
-                Send Email
-            </button>
-
-            <button id="btnEmailHistory">
-                Email History
-            </button>
-
+      <div><h1>Offer Details</h1></div>
+      <div style="display:flex; flex-direction:row; gap:10px;">
+        <div class="button-row">
+            <button class="btn" id="btnBack">Back</button>
+            <button class="btn" id="btnEditOffer">Edit Offer</button>
+            <button class="btn" id="btnAddItem">Add Item</button>
         </div>
-
-    </div>
-
-    <div class="card">
-
-        <h3>
-            General Information
-        </h3>
-
-        <table>
-
-            <tr>
-                <td>Offer Number</td>
-                <td id="offerNumber"></td>
-            </tr>
-
-            <tr>
-                <td>Company</td>
-                <td id="firma"></td>
-            </tr>
-
-            <tr>
-                <td>Date</td>
-                <td id="data"></td>
-            </tr>
-
-            <tr>
-                <td>Responsible</td>
-                <td id="responsabil"></td>
-            </tr>
-
-            <tr>
-                <td>Department</td>
-                <td id="departament"></td>
-            </tr>
-
-            <tr>
-                <td>Status</td>
-                <td id="stare"></td>
-            </tr>
-
-            <tr>
-                <td>Currency</td>
-                <td id="valuta"></td>
-            </tr>
-
-            <tr>
-                <td>Client Email</td>
-                <td id="email"></td>
-            </tr>
-
-        </table>
-
-    </div>
-
-    <div class="card">
-
-        <div class="summary">
-
-            <div class="summary-box">
-
-                <h3 id="itemCount">
-                    0
-                </h3>
-
-                <div>
-                    Items
-                </div>
-
-            </div>
-
-            <div class="summary-box">
-
-                <h3 id="offerTotal">
-                    0.00
-                </h3>
-
-                <div>
-                    Total
-                </div>
-
-            </div>
-
+        <div class="button-row">
+            <button class="btn" id="btnGeneratePdf">Generate PDF</button>
+            <button class="btn" id="btnPreviewPdf">Preview PDF</button>
+            <button class="btn" id="btnSendEmail">Send Email</button>
+            <button class="btn" id="btnEmailHistory">Email History</button>
         </div>
-
+      </div>
     </div>
-
-    <div class="card">
-
-        <h3>
-            Items
-        </h3>
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>Code</th>
-                    <th>Description</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Discount</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody id="itemsTable">
-
-            </tbody>
-
-        </table>
-
+    <div class="card section">
+      <h3>General Information</h3>
+      <table>
+        <tr><td>Offer Number</td><td id="offerNumber"></td></tr>
+        <tr><td>Company</td><td id="firma"></td></tr>
+        <tr><td>Date</td><td id="data"></td></tr>
+        <tr><td>Responsible</td><td id="responsabil"></td></tr>
+        <tr><td>Department</td><td id="departament"></td></tr>
+        <tr><td>Status</td><td id="stare"></td></tr>
+        <tr><td>Currency</td><td id="valuta"></td></tr>
+        <tr><td>Client Email</td><td id="email"></td></tr>
+      </table>
     </div>
-
+    <div class="section">
+      <div class="summary">
+        <div class="summary-box"><h3 id="itemCount">0</h3><div>Items</div></div>
+        <div class="summary-box"><h3 id="offerTotal">0.00</h3><div>Total</div></div>
+      </div>
+    </div>
+    <div class="section table-container">
+      <h3>Items</h3>
+      <table>
+        <thead><tr><th>Code</th><th>Description</th><th>Qty</th><th>Price</th><th>Discount</th><th>Total</th><th>Actions</th></tr></thead>
+        <tbody id="itemsTable"></tbody>
+      </table>
+    </div>
+  </div>
 </div>
-
-<div id="emailModal" style="display:none;">
-
-    <input
-        id="emailRecipient"
-        placeholder="Recipient">
-
-    <input
-        id="emailSubject"
-        placeholder="Subject">
-
-    <textarea
-        id="emailBody">
-    </textarea>
-
-    <button id="btnConfirmEmail">
-        Send
-    </button>
-
+<div id="emailModal" style="display:none;" class="section card">
+  <div class="form-group"><label for="emailRecipient">Recipient</label><input id="emailRecipient" placeholder="Recipient"></div>
+  <div class="form-group"><label for="emailSubject">Subject</label><input id="emailSubject" placeholder="Subject"></div>
+  <div class="form-group"><label for="emailBody">Message</label><textarea id="emailBody"></textarea></div>
+  <button class="btn" id="btnConfirmEmail">Send</button>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
 <script src="js/config.js"></script>
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/offer.js"></script>
-
 </body>
 </html>

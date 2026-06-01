@@ -9,11 +9,14 @@ require '../classes/Response.php';
 $user =
     Auth::validate();
 
-if(!$user)
+if(
+    !$currentUser ||
+    $currentUser['role'] !== 'admin'
+)
 {
     Response::json([
         'success'=>false
-    ],401);
+    ],403);
 }
 
 $db =

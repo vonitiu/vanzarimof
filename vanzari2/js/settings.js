@@ -65,3 +65,18 @@ $('#btnSave').click(function(){
 
     });
 })
+
+$(document).ready(function(){
+
+    if(
+        !requireRoles([
+            'admin'
+        ])
+    )
+    {
+        return;
+    }
+
+    loadUsers();
+
+});

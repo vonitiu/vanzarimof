@@ -1,176 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta charset="utf-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Offer</title>
-
-<link rel="stylesheet"
-href="css/app.css">
-
-<style>
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:8px;
-}
-
-.form-row{
-    display:flex;
-    gap:10px;
-    margin-bottom:10px;
-}
-
-.form-row input,
-.form-row select,
-.form-row textarea{
-    flex:1;
-}
-
-textarea{
-    min-height:100px;
-}
-
-.actions{
-    margin-top:20px;
-}
-
-</style>
-
-<link
-    rel="manifest"
-    href="manifest.json">
-
-<meta
-    name="theme-color"
-    content="#1f4e79">
-    
+<link rel="stylesheet" href="css/app.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4e79">
 </head>
-
 <body>
-
-<h1>
-Offer
-</h1>
-
-<div class="card">
-
-<input
-type="hidden"
-id="offerId">
-
-<div class="form-row">
-
-<input
-id="firma"
-placeholder="Company">
-
-<input
-id="data"
-type="date">
-
+<div class="page-shell">
+  <div class="container">
+<div id="menuContainer"></div>
+    <div class="section card">
+      <h1>Offer</h1>
+      <input type="hidden" id="offerId">
+      <div class="form-row">
+        <div class="form-group"><label for="firma">Company</label><input id="firma" placeholder="Company"></div>
+        <div class="form-group"><label for="data">Date</label><input id="data" type="date"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="responsabil">Responsible</label><input id="responsabil" placeholder="Responsible"></div>
+        <div class="form-group"><label for="departament">Department</label><input id="departament" placeholder="Department"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="valuta">Currency</label><select id="valuta"><option value="RON">RON</option><option value="EUR">EUR</option><option value="GBP">GBP</option></select></div>
+        <div class="form-group"><label for="stareoferta">Status</label><select id="stareoferta"><option value="Draft">Draft</option><option value="Submitted">Submitted</option><option value="Sent">Sent</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="contact_client">Contact Person</label><input id="contact_client" placeholder="Contact Person"></div>
+        <div class="form-group"><label for="email_client">Email</label><input id="email_client" placeholder="Email"></div>
+      </div>
+      <div class="form-group"><label for="observatii">Observations</label><textarea id="observatii" placeholder="Observations"></textarea></div>
+      <div class="button-row">
+        <button class="btn" id="btnSave">Save</button>
+        <button class="btn" id="btnSaveClose">Save & Close</button>
+        <button class="btn" id="btnCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="form-row">
-
-<input
-id="responsabil"
-placeholder="Responsible">
-
-<input
-id="departament"
-placeholder="Department">
-
-</div>
-
-<div class="form-row">
-
-<select id="valuta">
-
-<option value="RON">
-RON
-</option>
-
-<option value="EUR">
-EUR
-</option>
-
-<option value="GBP">
-GBP
-</option>
-
-</select>
-
-<select id="stareoferta">
-
-<option value="Draft">
-Draft
-</option>
-
-<option value="Submitted">
-Submitted
-</option>
-
-<option value="Sent">
-Sent
-</option>
-
-</select>
-
-</div>
-
-<div class="form-row">
-
-<input
-id="contact_client"
-placeholder="Contact Person">
-
-<input
-id="email_client"
-placeholder="Email">
-
-</div>
-
-<div class="form-row">
-
-<textarea
-id="observatii"
-placeholder="Observations">
-</textarea>
-
-</div>
-
-<div class="actions">
-
-<button id="btnSave">
-Save
-</button>
-
-<button id="btnSaveClose">
-Save & Close
-</button>
-
-<button id="btnCancel">
-Cancel
-</button>
-
-</div>
-
-</div>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
 <script src="js/config.js"></script>
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/offer-edit.js"></script>
-
 </body>
 </html>

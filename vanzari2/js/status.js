@@ -31,3 +31,18 @@ $(document).ready(function(){
     });
 
 });
+
+$(document).ready(function(){
+
+    if(
+        !requireRoles([
+            'admin'
+        ])
+    )
+    {
+        return;
+    }
+
+    loadUsers();
+
+});

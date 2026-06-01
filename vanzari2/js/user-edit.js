@@ -156,3 +156,18 @@ function saveUser()
 
     });
 }
+
+$(document).ready(function(){
+
+    if(
+        !requireRoles([
+            'admin'
+        ])
+    )
+    {
+        return;
+    }
+
+    loadUsers();
+
+});

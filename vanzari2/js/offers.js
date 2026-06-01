@@ -131,39 +131,39 @@ function renderOffers(rows)
             </td>
 
             <td>
+                <div class="button-row">
+                    <button class="btn" 
+                        class="action-btn"
+                        onclick="editOffer(${row.id})">
 
-                <button
-                    class="action-btn"
-                    onclick="editOffer(${row.id})">
+                        Edit
 
-                    Edit
+                    </button>
 
-                </button>
+                    <button class="btn" 
+                        class="action-btn"
+                        onclick="viewOffer(${row.id})">
 
-                <button
-                    class="action-btn"
-                    onclick="viewOffer(${row.id})">
+                        View
 
-                    View
+                    </button>
 
-                </button>
+                    <button class="btn" 
+                        class="action-btn"
+                        onclick="duplicateOffer(${row.id})">
 
-                <button
-                    class="action-btn"
-                    onclick="duplicateOffer(${row.id})">
+                        Duplicate
 
-                    Duplicate
+                    </button>
 
-                </button>
+                    <button class="btn" 
+                        class="action-btn"
+                        onclick="deleteOffer(${row.id})">
 
-                <button
-                    class="action-btn"
-                    onclick="deleteOffer(${row.id})">
+                        Delete
 
-                    Delete
-
-                </button>
-
+                    </button>
+                </div>
             </td>
 
         </tr>
@@ -242,3 +242,4 @@ function deleteOffer(id)
 
     });
 }
+

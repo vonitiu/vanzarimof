@@ -50,7 +50,7 @@ function renderUsers(rows)
 
             <td>
 
-                <button
+                <button class="btn" 
                     onclick="
                         editUser(
                             ${user.id}
@@ -59,7 +59,7 @@ function renderUsers(rows)
                     Edit
                 </button>
 
-                <button
+                <button class="btn" 
                     onclick="
                         resetPassword(
                             ${user.id}
@@ -67,7 +67,7 @@ function renderUsers(rows)
                     ">
                     Reset Password
                 </button>
-                <button
+                <button class="btn" 
                     onclick="
                         deactivateUser(
                             ${user.id}
@@ -152,6 +152,21 @@ function deactivateUser(id)
 
     });
 }
+
+$(document).ready(function(){
+
+    if(
+        !requireRoles([
+            'admin'
+        ])
+    )
+    {
+        return;
+    }
+
+    loadUsers();
+
+});
 
 $(document).ready(function(){
 

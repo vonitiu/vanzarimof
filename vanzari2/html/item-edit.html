@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Item</title>
+<link rel="stylesheet" href="css/app.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4e79">
+</head>
+<body>
+<div id="menuContainer"></div>
+<div class="page-shell">
+  <div class="container">
+    <div class="section card">
+      <h1>Item</h1>
+      <input type="hidden" id="itemId">
+      <div class="input-row">
+        <div class="form-group"><label for="cod">Code</label><input id="cod" placeholder="Code"></div>
+        <div class="form-group"><label for="catalog_no">Catalog No</label><input id="catalog_no" placeholder="Catalog No"></div>
+        <div class="form-group"><label for="material_no">Material No</label><input id="material_no" placeholder="Material No"></div>
+      </div>
+      <div class="form-group"><label for="descriere">Description</label><textarea id="descriere" placeholder="Description"></textarea></div>
+      <div class="input-row">
+        <div class="form-group"><label for="buc">Qty</label><input id="buc" type="number" step="0.01" placeholder="Qty"></div>
+        <div class="form-group"><label for="pret">Price</label><input id="pret" type="number" step="0.01" placeholder="Price"></div>
+        <div class="form-group"><label for="discount">Discount</label><input id="discount" type="number" step="0.01" placeholder="Discount"></div>
+      </div>
+      <div class="input-row">
+        <div class="form-group"><label for="livrare">Delivery</label><input id="livrare" placeholder="Delivery"></div>
+        <div class="form-group"><label for="packing_q">Packing</label><input id="packing_q" placeholder="Packing"></div>
+        <div class="form-group"><label for="cod_client">Client Code</label><input id="cod_client" placeholder="Client Code"></div>
+      </div>
+      <div class="input-row">
+        <div class="form-group"><label for="valoare">Value</label><input id="valoare" readonly class="calculated"></div>
+        <div class="form-group"><label for="total">Total</label><input id="total" readonly class="calculated"></div>
+      </div>
+      <div class="input-row">
+        <div class="form-group"><label for="obs1">Obs1</label><input id="obs1" placeholder="Obs1"></div>
+        <div class="form-group"><label for="obs2">Obs2</label><input id="obs2" placeholder="Obs2"></div>
+      </div>
+      <div class="button-row"><button class="btn" id="btnSave">Save</button><button class="btn" id="btnCancel">Cancel</button></div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/item-edit.js"></script>
+</body>
+</html>
