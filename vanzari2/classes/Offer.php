@@ -159,11 +159,13 @@ class Offer
                 departament,
                 stareoferta,
                 contact_client,
-                email_client
+                email_client,
+                customobservatii,
+                customobservatii2
             )
             VALUES
             (
-                ?,?,?,?,?,?,?,?,?,?,?
+                ?,?,?,?,?,?,?,?,?,?,?,?,?
             )"
         );
 
@@ -179,7 +181,9 @@ class Offer
             $data['departament'],
             $data['stareoferta'],
             $data['contact_client'],
-            $data['email_client']
+            $data['email_client'],
+            $data['customobservatii'],
+            $data['customobservatii2']
         );
 
         if(!$stmt->execute()){
@@ -206,12 +210,14 @@ class Offer
                 stareoferta=?,
                 contact_client=?,
                 email_client=?,
-                updatedBy=?
+                updatedBy=?,
+                customobservatii=?,
+                customobservatii2=?
             WHERE id=?"
         );
 
         $stmt->bind_param(
-            'ssssssssssi',
+            'ssssssssssssi',
             $data['firma'],
             $data['data'],
             $data['observatii'],
@@ -222,6 +228,8 @@ class Offer
             $data['contact_client'],
             $data['email_client'],
             $data['updatedBy'],
+            $data['customobservatii'],
+            $data['customobservatii2'],
             $id
         );
 

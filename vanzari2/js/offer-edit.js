@@ -212,3 +212,116 @@ function afterSave(closeAfter)
         );
     }
 }
+
+$('#firma').on(
+    'keyup',
+    function()
+{
+    let term =
+        $(this).val();
+
+    if(term.length < 2)
+    {
+        $('#companyResults')
+            .hide();
+
+        return;
+    }
+
+    api(
+        '/client_search.php?q=' +
+        encodeURIComponent(
+            term
+        )
+    )
+    .done(function(r){
+
+        renderCompanies(
+            r.data
+        );
+
+    });
+
+});
+
+function renderCompanies(rows)
+{
+    let html = '';
+
+    rows.forEach(function(c){
+
+        html +=
+        `
+        <div
+            class="autocomplete-item"
+
+            data-company="${c.firma}"
+            data-responsabil="${c.responsabil || ''}"
+            data-departament="${c.departament || ''}"
+            data-discount="${c.discount || 0}">
+
+            ${c.firma}
+
+        </div>
+        `;
+    });
+
+    if(rows.length === 0)
+    {
+        $('#companyResults')
+            .hide();
+
+        return;
+    }
+
+    $('#companyResults')
+        .html(html)
+        .show();
+}
+
+$(document).on(
+    'click',
+    '.autocomplete-item',
+    function()
+{
+    $('#firma').val(
+        $(this).data(
+            'company'
+        )
+    );
+
+    $('#responsabil').val(
+        $(this).data(
+            'responsabil'
+        )
+    );
+
+    $('#departament').val(
+        $(this).data(
+            'departament'
+        )
+    );
+
+    $('#discountfirma').val(
+        $(this).data(
+            'discount'
+        )
+    );
+
+    $('#companyResults')
+        .hide();
+});
+
+$(document).click(function(e){
+
+    if(
+        !$(e.target).closest(
+            '.autocomplete-container'
+        ).length
+    )
+    {
+        $('#companyResults')
+            .hide();
+    }
+
+});

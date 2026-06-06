@@ -10,8 +10,8 @@ $user =
     Auth::validate();
 
 if(
-    !$currentUser ||
-    $currentUser['role'] !== 'admin'
+    !$user ||
+    $user['role'] !== 'admin'
 )
 {
     Response::json([

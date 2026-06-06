@@ -358,3 +358,36 @@ tbody tr:hover {
 .summary-box div {
     color: var(--muted);
 }
+
+.autocomplete-container{
+    position:relative;
+}
+
+.autocomplete-results{
+    position:absolute;
+
+    top:100%;
+    left:0;
+    right:0;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+    z-index:1000;
+
+    display:none;
+}
+
+.autocomplete-item{
+    padding:10px;
+    cursor:pointer;
+}
+
+.autocomplete-item:hover{
+    background:#f5f5f5;
+}

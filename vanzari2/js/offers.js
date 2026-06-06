@@ -132,7 +132,14 @@ function renderOffers(rows)
 
             <td>
                 <div class="button-row">
-                    <button class="btn" 
+                <button class="btn" 
+                        class="action-btn"
+                        onclick="viewOffer(${row.id})">
+
+                        View
+
+                    </button>
+                    <!-- button class="btn" 
                         class="action-btn"
                         onclick="editOffer(${row.id})">
 
@@ -140,13 +147,7 @@ function renderOffers(rows)
 
                     </button>
 
-                    <button class="btn" 
-                        class="action-btn"
-                        onclick="viewOffer(${row.id})">
-
-                        View
-
-                    </button>
+                    
 
                     <button class="btn" 
                         class="action-btn"
@@ -162,7 +163,7 @@ function renderOffers(rows)
 
                         Delete
 
-                    </button>
+                    </button-->
                 </div>
             </td>
 
